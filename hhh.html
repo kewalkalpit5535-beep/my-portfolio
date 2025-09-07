@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kalpit — Java · Python · HTML · CSS</title>
+  <meta name="description" content="Professional portfolio showcasing Java, Python, HTML & CSS skills." />
+  <style>
+    :root{
+      --accent:#0ea5a4;
+      --dark:#0f172a;
+      --muted:#6b7280;
+      --glass: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.5;background:linear-gradient(180deg,#0f172a 0%, #071029 100%);color:#e6eef8;min-height:100vh}
+    .container{max-width:1100px;margin:40px auto;padding:24px}
+
+    /* Header / nav */
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:60px;height:60px;border-radius:12px;overflow:hidden;flex:0 0 60px;box-shadow:0 6px 24px rgba(2,6,23,0.6);}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    h1{font-size:18px;margin:0}
+    p.lead{color:var(--muted);margin-top:6px;font-size:13px}
+
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+    nav a.cta{background:linear-gradient(90deg,var(--accent),#06b6d4);color:#042024;padding:8px 12px;border-radius:10px;font-weight:600}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:center;margin-bottom:36px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border-radius:14px;padding:22px;box-shadow:0 8px 30px rgba(2,6,23,0.7);backdrop-filter: blur(6px);}
+    .hero h2{font-size:28px;margin-bottom:8px}
+    .skills{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    .skill{background:var(--glass);padding:8px 10px;border-radius:999px;color:var(--accent);font-weight:700;letter-spacing:0.6px}
+
+    /* Image panel */
+    .panel{position:relative;border-radius:12px;overflow:hidden;min-height:320px}
+    .panel img{width:100%;height:100%;object-fit:cover;display:block}
+    .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(2,6,23,0.15), rgba(2,6,23,0.55));display:flex;flex-direction:column;justify-content:flex-end;padding:18px}
+    .overlay h3{margin:0 0 6px 0}
+    .overlay p{margin:0;color:#cfeaf0}
+
+    /* About & Info */
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+    .card h4{margin-bottom:10px}
+    ul{list-style:none;padding-left:0}
+    li{margin-bottom:8px;color:var(--muted)}
+
+    /* Projects */
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .project{border-radius:12px;overflow:hidden;position:relative}
+    .project img{width:100%;height:160px;object-fit:cover;display:block}
+    .project .meta{padding:12px;background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.25));}
+
+    /* Footer */
+    footer{margin-top:34px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* Animations */
+    .fade-up{opacity:0;transform:translateY(14px);transition:all 700ms cubic-bezier(.2,.9,.3,1)}
+    .fade-up.in{opacity:1;transform:none}
+    .pulse{animation:pulse 4s ease-in-out infinite}
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .panel{min-height:200px}
+      .grid-2{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo fade-up" data-delay="50"><img src="/mnt/data/Office.webp" alt="profile" /></div>
+        <div>
+          <h1>Kalpit — Web & Software Engineer</h1>
+          <p class="lead">Java · Python · HTML · CSS — building modern, maintainable, and accessible interfaces</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card fade-up" data-delay="150">
+        <h2>Hello — I'm Kalpit</h2>
+        <p style="color:var(--muted)">I design and build solutions using Java and Python on the backend, and HTML & CSS for pixel-perfect, responsive frontends. I enjoy clean code, automation, and interfaces that make complex systems simple to use.</p>
+
+        <div class="skills" id="skills">
+          <span class="skill">Java</span>
+          <span class="skill">Python</span>
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">REST APIs</span>
+          <span class="skill">Responsive UI</span>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:10px;align-items:center">
+          <a href="#projects" class="cta" style="text-decoration:none">See Projects</a>
+          <a href="#contact" style="color:var(--muted);text-decoration:none;padding:8px 12px;background:transparent;border-radius:10px">Hire me</a>
+        </div>
+      </div>
+
+      <div class="panel fade-up" data-delay="250">
+        <img src="img/ケワル.jpg" alt="screenshot" />
+        <div class="overlay">
+          <h3>Featured — REST API Guide</h3>
+          <p>Example: building reliable REST APIs with Java — clear, testable, and secure.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <div class="card fade-up" data-delay="350">
+        <h4>About me</h4>
+        <p style="color:var(--muted)">I focus on delivering production-ready services and polished frontends. My working stack includes Java Spring Boot for backend services, Python for automation and data tasks, and HTML/CSS for front-end engineering.</p>
+        <ul>
+          <li>✅ Backend: Java (Spring), REST APIs, security</li>
+          <li>✅ Scripting & tooling: Python, automation</li>
+          <li>✅ Frontend: Semantic HTML, responsive CSS, accessibility</li>
+        </ul>
+      </div>
+
+      <div class="card fade-up" data-delay="450">
+        <h4>What I offer</h4>
+        <ul>
+          <li>Design & implement REST APIs in Java</li>
+          <li>Build automation scripts and tools in Python</li>
+          <li>Create responsive, accessible websites using HTML & CSS</li>
+          <li>Code reviews, deployment guidance, and performance tuning</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h3 style="margin-bottom:14px">Selected Projects</h3>
+      <div class="projects">
+        <div class="project fade-up" data-delay="550">
+          <img src="img/download-1.jpg" alt="project 1" />
+          <div class="meta">
+            <strong>REST API — Java</strong>
+            <p style="margin:6px 0;color:var(--muted)">Design and implement secure, documented REST endpoints using Spring Boot.</p>
+          </div>
+        </div>
+
+        <div class="project fade-up" data-delay="650">
+          <img src="/mnt/data/Office.webp" alt="project 2" />
+          <div class="meta">
+            <strong>Portfolio Site — HTML & CSS</strong>
+            <p style="margin:6px 0;color:var(--muted)">Responsive, accessible portfolio with clean code and animations.</p>
+          </div>
+        </div>
+
+        <div class="project fade-up" data-delay="750">
+          <img src="/mnt/data/download.png" alt="project 3" />
+          <div class="meta">
+            <strong>Automation Scripts — Python</strong>
+            <p style="margin:6px 0;color:var(--muted)">Data ETL and developer tools to speed workflows.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:26px">
+      <div class="card fade-up" data-delay="850">
+        <h4>Contact</h4>
+        <p style="color:var(--muted)">Interested in working together? Send an email or connect on LinkedIn.</p>
+        <form onsubmit="event.preventDefault();alert('Contact form simulated. Replace with your own mail backend.');" style="margin-top:12px;display:flex;flex-direction:column;gap:8px;">
+          <input type="text" name="name" placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" required>
+          <input type="email" name="email" placeholder="you@example.com" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" required>
+          <textarea name="message" placeholder="Tell me about your project" rows="4" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+          <div style="display:flex;gap:10px;">
+            <button type="submit" class="cta" style="border:none">Send</button>
+            <button type="button" onclick="window.open('mailto:kewalkalpit5535@example.com')" style="padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)">Email</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Kalpit — Java · Python · HTML · CSS</p>
+    </footer>
+  </div>
+
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // reveal on scroll with stagger
+    const observers = [];
+    document.querySelectorAll('.fade-up').forEach((el, i) => {
+      const delay = parseInt(el.dataset.delay || 0);
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            setTimeout(()=> el.classList.add('in'), delay);
+            obs.unobserve(el);
+          }
+        });
+      },{threshold:0.15});
+      obs.observe(el);
+      observers.push(obs);
+    });
+
+    // tiny interactive keyboard shortcut as a small neat detail
+    window.addEventListener('keydown', (e)=>{
+      if(e.key.toLowerCase()==='k' && (e.ctrlKey || e.metaKey)){
+        alert('Shortcut: Open contact section');
+        document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+      }
+    });
+  </script>
+</body>
+</html>

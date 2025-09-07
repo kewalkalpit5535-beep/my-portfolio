@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Business — Java · Python · HTML · CSS</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%;font-family:'Inter',Segoe UI,Roboto,Arial;background:linear-gradient(135deg,#0f172a,#1e3a8a,#312e81);background-size:400% 400%;animation:gradient 18s ease infinite;color:#e6eef8;scroll-behavior:smooth}
+    a{text-decoration:none;color:inherit}
+    @keyframes gradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+    .wrap{max-width:1200px;margin:auto;padding:40px 20px}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center;margin-top:40px}
+    .hero-card{padding:40px;background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.6);animation:fadeUp 1s ease}
+    .hero-card h1{font-size:2.8rem;line-height:1.1;margin-bottom:14px}
+    .typed{color:#38bdf8;font-weight:700;border-right:3px solid #38bdf8;white-space:nowrap;overflow:hidden;animation:typing 4s steps(30,end), blink .8s infinite}
+    @keyframes typing{from{width:0}to{width:100%}}
+    @keyframes blink{50%{border-color:transparent}}
+    .lead{color:#cfe6ff;opacity:0.95;font-size:1.1rem;margin-bottom:18px}
+
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .skill{padding:10px 16px;background:rgba(255,255,255,0.08);border-radius:999px;font-weight:600;transition:.3s}
+    .skill:hover{background:#38bdf822;transform:scale(1.08)}
+
+    .btn{padding:12px 20px;border-radius:12px;font-weight:700;background:linear-gradient(90deg,#2563eb,#7c3aed);color:#fff;box-shadow:0 0 15px rgba(37,99,235,0.5);transition:.3s}
+    .btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 0 25px rgba(37,99,235,0.7)}
+    .btn.alt{background:linear-gradient(90deg,#10b981,#06b6d4)}
+
+    .photo{border-radius:20px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,.6)}
+    .photo img{width:100%;height:100%;object-fit:cover;transition:.8s}
+    .photo:hover img{transform:scale(1.08) rotate(-2deg)}
+
+    section{margin-top:60px}
+    .card{padding:28px;border-radius:16px;background:rgba(255,255,255,0.04);box-shadow:0 10px 30px rgba(0,0,0,.5);transition:.3s}
+    .card:hover{transform:translateY(-5px)}
+    h2{font-size:2rem;margin-bottom:12px;color:#93c5fd}
+    h3{margin-bottom:8px;color:#60a5fa}
+
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+
+    .portfolio-item{overflow:hidden;position:relative;cursor:pointer}
+    .portfolio-item img{width:100%;height:200px;object-fit:cover;border-radius:12px;margin-bottom:10px}
+    .portfolio-item strong{display:block;margin-bottom:6px;font-size:1.1rem}
+    .portfolio-item p{font-size:0.95rem;opacity:.9}
+
+    form{margin-top:16px;display:grid;gap:14px;max-width:600px}
+    .field{position:relative}
+    .field input,.field textarea{width:100%;padding:12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.2);color:inherit}
+    .field label{position:absolute;top:50%;left:12px;transform:translateY(-50%);pointer-events:none;transition:.3s;opacity:0.7}
+    .field input:focus+label,.field input:not(:placeholder-shown)+label,
+    .field textarea:focus+label,.field textarea:not(:placeholder-shown)+label{top:-8px;left:8px;font-size:0.8rem;color:#38bdf8;background:#0f172a;padding:0 4px;border-radius:4px;opacity:1}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+    .reveal.visible{opacity:1;transform:none}
+
+    footer{text-align:center;margin-top:50px;color:#9fb9e6;font-size:.95rem;opacity:0.9}
+
+    @media(max-width:860px){
+      .hero{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .photo{height:320px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-card reveal">
+        <h1><span class="typed">Professional Web & Software Services</span></h1>
+        <p class="lead">I specialize in crafting modern, maintainable, and high-performance digital solutions. From dynamic web applications to automation scripts and enterprise systems, I bring ideas to life using <strong>Java</strong>, <strong>Python</strong>, <strong>HTML</strong>, and <strong>CSS</strong>.</p>
+        <div class="skills">
+          <span class="skill">Java</span>
+          <span class="skill">Python</span>
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">Responsive Design</span>
+          <span class="skill">UI/UX</span>
+        </div>
+        <div style="margin-top:20px;display:flex;gap:12px;align-items:center">
+          <a class="btn" href="#contact">Hire me</a>
+          <a class="btn alt" href="#portfolio">See portfolio</a>
+        </div>
+      </div>
+      <div class="photo reveal">
+        <img src="img/ケワル.jpg" alt="Kalpit" />
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal card">
+      <div class="grid-2">
+        <div>
+          <h2>About Me</h2>
+          <p>I am a passionate developer with years of experience in building full-stack applications. My background covers both backend engineering (secure APIs, database systems, automation) and frontend development (interactive interfaces, animation, accessibility). My mission is to blend technology with design—delivering products that are not only powerful but also user-friendly.</p>
+          <p>Whether it’s creating a scalable enterprise application or a stylish personal website, I focus on delivering reliable, optimized, and future-proof solutions. I continuously explore new technologies and stay updated with modern frameworks, ensuring that every project meets industry standards.</p>
+        </div>
+        <div>
+          <img src="img/download-1.jpg" alt="Work Environment" style="border-radius:16px;width:100%;height:auto;">
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="reveal">
+      <div class="card">
+        <h2>Services</h2>
+        <div class="grid-3">
+          <article class="card">
+            <img src="https://source.unsplash.com/400x250/?website,developer" alt="Web Development" style="border-radius:12px;width:100%;margin-bottom:12px;">
+            <h3>Web Development</h3>
+            <p>I create responsive, SEO-friendly, and modern websites tailored to client needs. Every project focuses on accessibility, speed, and a seamless user experience—making sure your business stands out online.</p>
+          </article>
+          <article class="card">
+            <img src="https://source.unsplash.com/400x250/?java,programming" alt="Java Backend" style="border-radius:12px;width:100%;margin-bottom:12px;">
+            <h3>Backend Systems (Java)</h3>
+            <p>From enterprise-grade APIs to cloud-based solutions, I design backend systems with strong security, scalability, and performance. Java frameworks allow me to deliver stable business applications that last.</p>
+          </article>
+          <article class="card">
+            <img src="https://source.unsplash.com/400x250/?python,data" alt="Python Automation" style="border-radius:12px;width:100%;margin-bottom:12px;">
+            <h3>Automation & Data (Python)</h3>
+            <p>Using Python, I build automation tools, data pipelines, and AI-driven solutions. Whether it’s reducing manual work or analyzing business insights, I deliver efficient and intelligent automation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="reveal">
+      <div class="card">
+        <h2>Portfolio</h2>
+        <div class="grid-3">
+          <div class="portfolio-item card">
+            <img src="https://source.unsplash.com/400x250/?landingpage,design" alt="Project A">
+            <strong>Project A: Animated Landing Page</strong>
+            <p>A dynamic landing page with smooth animations, integrated contact form, and modern design—boosting user engagement by 70%.</p>
+          </div>
+          <div class="portfolio-item card">
+            <img src="https://source.unsplash.com/400x250/?api,server" alt="Project B">
+            <strong>Project B: Java REST API</strong>
+            <p>Developed a secure and scalable REST API with authentication and cloud deployment, empowering enterprise clients to manage data safely.</p>
+          </div>
+          <div class="portfolio-item card">
+            <img src="https://source.unsplash.com/400x250/?python,automation" alt="Project C">
+            <strong>Project C: Python Automation</strong>
+            <p>Created automation scripts that streamlined workflows and reduced manual work by 50%, saving both time and operational cost.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal card">
+      <div class="grid-2">
+        <div>
+          <h2>Contact</h2>
+          <p>If you’re looking for a reliable partner to design, develop, or optimize your digital solutions, let’s connect. Fill out the form below and I’ll respond quickly.</p>
+          <form>
+            <div class="field">
+              <input type="text" name="name" placeholder=" " required>
+              <label>Your Name</label>
+            </div>
+            <div class="field">
+              <input type="email" name="email" placeholder=" " required>
+              <label>Email</label>
+            </div>
+            <div class="field">
+              <textarea name="message" placeholder=" " rows="4" required></textarea>
+              <label>Message</label>
+            </div>
+            <div style="display:flex;gap:10px">
+              <button type="submit" class="btn">Send Message</button>
+              <button type="button" class="btn alt">Call</button>
+            </div>
+          </form>
+        </div>
+        <div>
+          <img src="https://source.unsplash.com/500x400/?contact,team" alt="Contact Image" style="border-radius:16px;width:100%;height:auto;">
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Your Business — Java · Python · HTML · CSS
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}})
+    },{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+    document.querySelector('form').addEventListener('submit',ev=>{
+      ev.preventDefault();
+      const btn=ev.target.querySelector('button[type="submit"]');
+      btn.textContent="Sending...";
+      btn.disabled=true;
+      setTimeout(()=>{btn.textContent="Sent ✓";},1000);
+      setTimeout(()=>{btn.textContent="Send Message";btn.disabled=false},2500);
+    });
+  </script>
+</body>
+</html>
